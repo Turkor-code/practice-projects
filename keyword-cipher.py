@@ -1,6 +1,7 @@
-def keyword_cipher(msg, keyword):
-    letters = "abcdefghijklmnopqrstuvwxyz"
-    letters = letters.lower()
+letters = "abcdefghijklmnopqrstuvwxyz"
+letters = letters.lower()
+
+def keyword_cipher(msg, keyword): # ** CIPHERING **
     keyword = keyword.lower()
     msg = msg.lower()
 
@@ -10,15 +11,12 @@ def keyword_cipher(msg, keyword):
         if i in key and i != " ":  key.replace(i, "") 
         else: key = key + i
 
-    print(key)
-
     # Clearing repeats in the alphabet vs keyword
 
     for x in letters:
         if x in key: letters.replace(x, "")
         else: key = key + x
 
-    print(key)
     # Creating the ciphered message
 
     cipher = ""
@@ -33,4 +31,4 @@ def keyword_cipher(msg, keyword):
     return msg
 
 print(keyword_cipher("Welcome home","secret"))
-print("wwteilcclojmte dhlojmte") #wticljt dljt
+
